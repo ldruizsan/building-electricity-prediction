@@ -4,10 +4,8 @@ import streamlit as st
 import pandas as pd
 from sklearn.neighbors import KNeighborsRegressor
 from building_data import *
-import datetime as dt
 import numpy as np
 import plotly.express as px
-import matplotlib.pyplot as plt
 
 path = 'building_data'
 metadata = pd.read_csv(path + '/meta_open.csv')
