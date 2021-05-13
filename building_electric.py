@@ -14,7 +14,7 @@ st.title('This webapp will show analysis of building electricity consumption and
 st.markdown('### We are using a metadata file that summarizes the office information and weather data.')
 st.write(metadata.head())
 
-Timezone_data={'America/New_York','Europe/London','America/Phoenix','America/Chicago','America/Los_Angeles','Euope/Zurich','Asia/Singapore','America/Denver'}
+Timezone_data={'America/New_York','Europe/London','America/Phoenix','America/Chicago','America/Los_Angeles','Europe/Zurich','Asia/Singapore','America/Denver'}
 Industry_data={'Education','Government','Commercial Property'}
 
 st.sidebar.subheader('Filters')
