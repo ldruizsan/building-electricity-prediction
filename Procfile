@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run airlines.py
+web: sh setup.sh && streamlit run building_electric.py
