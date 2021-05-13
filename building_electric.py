@@ -11,6 +11,7 @@ path = 'building_data'
 metadata = pd.read_csv(path + '/meta_open.csv')
 
 st.title('This webapp will show analysis of building electricity consumption and use KNN to make predictions for the usage')
+st.subheader('Disclaimer: Not every combination of timezone and industry will have enough data to make the analysis')
 st.markdown('### We are using a metadata file that summarizes the office information and weather data.')
 st.write(metadata.head())
 
@@ -53,7 +54,7 @@ st.write(weather_data.head())
 
 st.write('Now let\'s do a left join of building (left table) and weather data.')
 clean_merged_data = pd.merge(building_data,weather_data,how='left',on='timestamp')
-clean_merged_data = clean_merged_data.fillna(method='bfill')
+clean_merged_data = clean_merged_data.fillna(method='backfill')
 
 st.write(clean_merged_data.head())
 
@@ -143,3 +144,6 @@ fitted = knnreg.fit(actual_v_predicted_plot[['kWh_Actual']], actual_v_predicted[
 score = knnreg.score(actual_v_predicted_plot[['kWh_Actual']], actual_v_predicted[['kWh_Predicted']])
 
 st.write('The coefficient of determination for this prediction is: ' + str(round(score,3)))
+
+
+st.write(print(metadata['timezone'].value_counts()))

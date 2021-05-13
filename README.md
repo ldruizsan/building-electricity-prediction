@@ -10,3 +10,5 @@ Future ideas:
 
 - Use different algorithms to make the prediction and compare them.
 - Allow the user to choose the algorithm and have the dashboard display the results.
+
+This dataset does have one major limitation: not every combination of timezone and industry has enough data to complete all parts of the analysis, if any at all.
